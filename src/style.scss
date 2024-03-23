@@ -1,0 +1,60 @@
+@import "./sass/colors";
+@import "./sass/breakpoints";
+@import "./sass/section/aboutMe.scss";
+@import "./sass/section/portfolio";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $brand-color-one;
+  color: $white;
+  font-family: "Koulen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.wrapper {
+  margin: auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+section {
+  text-align: center;
+
+  .background {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    padding-top: 190px;
+    padding-bottom: 350px;
+  }
+
+  h2 {
+    font-size: 5rem;
+    font-weight: 400;
+    margin-bottom: 6rem;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 2rem;
+  }
+
+  @media (min-width: $tablet) {
+    h2 {
+      font-size: 8.4rem;
+    }
+    p {
+      font-size: 2.4rem;
+    }
+  }
+}
