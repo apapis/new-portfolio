@@ -1,0 +1,235 @@
+@import "../animations";
+
+.section--introduction {
+  min-height: 100dvh;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  a {
+    color: $white;
+  }
+
+  h1 {
+    font-size: 7rem;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: 6rem;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+
+  &__text__name {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+
+    &__block {
+      width: 0%;
+      height: 100%;
+      background-color: $brand-color-three;
+      position: absolute;
+      animation: rectangle 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+    }
+
+    &__title {
+      position: relative;
+      animation: fadeIn 2s forwards;
+      animation-delay: 1.6s;
+      opacity: 0;
+
+      &__dot {
+        position: absolute;
+        right: -27px;
+        bottom: 5px;
+        animation: popIn 0.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+        animation-delay: 2s;
+        opacity: 0;
+        width: 25px;
+        height: 25px;
+        stroke-width: 2px;
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  &__text__subject {
+    position: relative;
+
+    &__block {
+      position: absolute;
+      width: 0%;
+      height: 100%;
+      background: $pink;
+      animation: rectangle 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+      animation-delay: 2s;
+    }
+
+    &__title {
+      animation: fadeIn 2s forwards;
+      animation-delay: 3.2s;
+      opacity: 0;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+
+    justify-content: space-between;
+    font-size: 3rem;
+    padding: 1rem 0;
+    span {
+      color: $white;
+      font-size: 3rem;
+    }
+    button {
+      min-width: 10rem;
+      height: 7rem;
+      background-color: $brand-color-two;
+      border: none;
+      font-size: 3rem;
+      border-radius: 2rem;
+      opacity: 0;
+
+      animation: fadeIn 2s forwards;
+      animation-delay: 4s;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    svg {
+      width: 4rem;
+      height: 4rem;
+      color: $white;
+    }
+
+    &__button--slide {
+      position: relative;
+      display: flex;
+      height: 100%;
+      overflow: hidden;
+
+      svg {
+        margin-bottom: 0;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        transition: all 0.5s;
+        z-index: -1;
+      }
+
+      &::after {
+        height: 100%;
+        top: 0;
+        left: -10px;
+        border-left: 2px solid #fff;
+        z-index: 2;
+      }
+
+      &::before {
+        width: 100%;
+        top: -10px;
+        left: 0;
+        border-top: 3px solid #fff;
+        transition-delay: 0.1s;
+        z-index: 2;
+      }
+
+      &:hover::after {
+        left: 300px;
+      }
+
+      &:hover::before {
+        top: 100px;
+      }
+
+      &__span1,
+      &__span2 {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &__span1 {
+        left: 50%;
+        transition: 0.5s;
+      }
+
+      &__span2 {
+        left: -50%;
+        transition: 0.5s 0.1s;
+      }
+
+      &:hover &__span1 {
+        left: 150%;
+      }
+
+      &:hover &__span2 {
+        left: 50%;
+      }
+    }
+  }
+
+  @media (min-width: $tablet) {
+    h1 {
+      font-size: 12.8rem;
+    }
+
+    h2 {
+      font-size: 7rem;
+    }
+
+    &__content {
+      gap: 10rem;
+    }
+
+    &__buttons {
+      font-size: 4.8rem;
+
+      span {
+        font-size: 4.8rem;
+      }
+
+      button {
+        min-width: 18rem;
+      }
+    }
+
+    &__text__name {
+      &__title {
+        &__dot {
+          width: 50px;
+          height: 50px;
+          stroke-width: 1px;
+          right: -68px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desk) {
+    &__content {
+      flex-direction: row;
+      gap: 20rem;
+    }
+    &__buttons {
+      flex-direction: column;
+    }
+  }
+}

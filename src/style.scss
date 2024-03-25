@@ -1,8 +1,10 @@
 @import "./sass/colors";
 @import "./sass/breakpoints";
+@import "./sass/section/introduction.scss";
 @import "./sass/section/aboutMe.scss";
 @import "./sass/section/portfolio";
-
+@import "./sass/section/contact";
+@import "./sass/section/skills";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -24,19 +26,13 @@ body {
   max-width: 1200px;
   padding: 0 20px;
 }
+a {
+  text-decoration: none;
+  color: $brand-color-three;
+}
 
 section {
   text-align: center;
-
-  .background {
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    z-index: -1;
-    padding-top: 190px;
-    padding-bottom: 350px;
-  }
 
   h2 {
     font-size: 5rem;
@@ -47,6 +43,16 @@ section {
   p {
     font-weight: 400;
     font-size: 2rem;
+  }
+
+  .background {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    padding-top: 190px;
+    padding-bottom: 350px;
   }
 
   @media (min-width: $tablet) {
