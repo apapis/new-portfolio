@@ -10,8 +10,60 @@
       href="https://fonts.googleapis.com/css2?family=Koulen&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <header>
+      <nav class="nav">
+        <button class="nav__button__open">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-menu"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <div class="nav__box">
+          <button class="nav__button__close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-x"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          <a data-target="aboutMe" href="#aboutMe" class="nav__link"
+            >About Me</a
+          >
+          <a data-target="skills" href="#skills" class="nav__link">Skills</a>
+          <a data-target="portfolio" href="#portfolio" class="nav__link"
+            >Portfolio</a
+          >
+          <a data-target="contact" href="#contact" class="nav__link">Contact</a>
+          <span class="navigation__scrollspy"></span>
+        </div>
+      </nav>
+    </header>
     <main>
       <section class="section section--introduction" id="introduction">
         <div class="section--introduction__content">
@@ -89,7 +141,7 @@
           </div>
         </div>
       </section>
-      <section class="section section--aboutMe">
+      <section id="aboutMe" class="section section--aboutMe">
         <div class="background">
           <div class="wrapper">
             <h2>About Me</h2>
@@ -120,7 +172,7 @@
           </div>
         </div>
       </section>
-      <section class="section section--skills">
+      <section id="skills" class="section section--skills">
         <div class="wrapper">
           <h2>Skills</h2>
 
@@ -333,7 +385,7 @@
           </div>
         </div>
       </section>
-      <section class="section section--contact">
+      <section id="contact" class="section section--contact">
         <div class="wrapper">
           <h2>Contact</h2>
 

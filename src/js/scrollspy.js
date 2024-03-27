@@ -1,33 +1,47 @@
-const links = document.querySelectorAll(".navigation__link");
+const links = document.querySelectorAll(".nav__link");
 const sections = document.querySelectorAll(".section");
 const indicator = document.querySelector(".navigation__scrollspy");
-const navHeight = document.querySelector(".navigation--desktop").clientHeight;
-
-window.onscroll = () => scrollspy();
-window.onload = () => scrollspy();
-window.onresize = () => scrollspy();
+const nav = document.querySelector(".nav");
 
 const scrollspy = () => {
-    
-  const pageYPosition =
-    document.documentElement.scrollTop || document.body.scrollTop;
-  sections.forEach((section) => {
-    const sectionYPosition = section.offsetTop;
-    
+  const windowSize = window.innerWidth;
+  const pageYPosition = window.scrollY;
+  const navHeight = nav.clientHeight;
 
-    if (pageYPosition > sectionYPosition - navHeight) {
-        
+  sections.forEach((section) => {
+    const sectionYPosition = section.offsetTop - navHeight;
+
+    if (
+      pageYPosition >= sectionYPosition &&
+      pageYPosition < sectionYPosition + section.offsetHeight
+    ) {
       links.forEach((link) => {
         if (link.dataset.target === section.id) {
-            
-          indicator.style.left = `${link.offsetLeft}px`;
-          indicator.style.width = `${link.offsetWidth}px`;
-        }else if(section.id =="introduction") {
-            indicator.style.width = `0px`;
+          if (windowSize > 768) {
+            indicator.style.left = `${link.offsetLeft}px`;
+            indicator.style.width = `${link.offsetWidth}px`;
+            indicator.style.top = "0";
+            indicator.style.height = "auto";
+          } else {
+            indicator.style.top = `${link.offsetTop}px`;
+            indicator.style.height = `${link.offsetHeight}px`;
+            indicator.style.width = `${link.offsetWidth}px`;
+            indicator.style.left = `auto`;
+          }
+          link.style.color = "#fff";
+        } else if (section.id == "introduction") {
+          link.removeAttribute("style");
+          indicator.style.width = `0px`;
+        } else {
+          link.removeAttribute("style");
         }
       });
     }
   });
 };
 
+// Inicjalizacja i ustawienie nasłuchiwaczy
 scrollspy();
+window.addEventListener("scroll", scrollspy);
+window.addEventListener("load", scrollspy);
+window.addEventListener("resize", scrollspy);
