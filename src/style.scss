@@ -12,6 +12,14 @@
   padding: 0;
   font-size: 62.5%;
   scroll-behavior: smooth;
+
+  @media (min-width: 2300px) {
+    font-size: 67.5%;
+  }
+
+  @media (min-width: 2600px) {
+    font-size: 82.5%;
+  }
 }
 
 body {
@@ -24,8 +32,8 @@ body {
 
 .wrapper {
   margin: auto;
-  max-width: 1200px;
-  padding: 0 20px;
+  max-width: 120rem;
+  padding: 0 2rem;
 }
 a {
   text-decoration: none;
@@ -52,8 +60,8 @@ section {
     background-position: center;
     background-size: cover;
     z-index: -1;
-    padding-top: 190px;
-    padding-bottom: 350px;
+    padding-top: 19rem;
+    padding-bottom: 35rem;
   }
 
   @media (min-width: $tablet) {
