@@ -390,14 +390,20 @@
           <h2>Contact</h2>
 
           <form
+            class="contact__form"
             action="https://formsubmit.co/6202ba928bfcdcc058f6a9546fc9f6da"
             method="POST"
           >
-            <label class="contact__form__title" required>email</label>
-            <input type="email" name="email" required />
-            <label class="contact__form__title">name</label>
+            <h3 class="contact__form__title" required>email</h3>
+            <input
+              class="contact__form__input"
+              type="email"
+              name="email"
+              required
+            />
+            <h3 class="contact__form__title">name</h3>
             <input class="contact__form__input" type="text" name="name" />
-            <label class="contact__form__title">message</label>
+            <h3 class="contact__form__title">message</h3>
             <textarea
               class="contact__form__input contact__form__input--textarea"
               name="text"
@@ -405,11 +411,6 @@
             ></textarea>
             <input type="hidden" name="_captcha" value="false" />
             <button class="contact__form__button" type="submit">Submit</button>
-            <input
-              type="hidden"
-              name="_next"
-              value="https://projectwwwsite.com/Adam_Papis-Portfolio/"
-            />
           </form>
         </div>
       </section>
