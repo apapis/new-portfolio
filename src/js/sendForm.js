@@ -1,16 +1,19 @@
 const contactForm = document.querySelector("#contact__form");
-const apiURL = "https://formsubmit.co/6202ba928bfcdcc058f6a9546fc9f6da";
+const apiURL = "https://api.emailjs.com/api/v1.0/email/send";
 
 contactForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  const formData = new FormData(contactForm);
+
+  const data = {
+    service_id: "service_hcbjh33",
+    template_id: "template_vx5hnwr",
+    user_id: "dPvqTdX5uKGJO111K",
+  };
 
   fetch(apiURL, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(Object.fromEntries(formData)),
+    data: JSON.stringify(data),
+    contentType: "application/json",
   })
     .then((response) => {
       if (response.ok) {
