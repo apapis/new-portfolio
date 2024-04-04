@@ -1,24 +1,30 @@
 const contactForm = document.querySelector("#contact__form");
 const apiURL = "https://formsubmit.co/6202ba928bfcdcc058f6a9546fc9f6da";
-const formDataTest = {
-  email: "papisadamt@gmail.com",
-  name: "Adam Tomasz Papis",
-  text: "asdasdasd",
-  _captcha: false,
-};
+
 contactForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const formData = new FormData(contactForm);
   console.log(formData);
-  fetch("https://formsubmit.co/6202ba928bfcdcc058f6a9546fc9f6da", {
+  fetch(apiURL, {
     method: "POST",
-    body: formDataTest,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(Object.fromEntries(formData)),
   })
-    .then((response) => response.json())
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Form submission failed");
+      }
+    })
     .then((data) => {
       console.log("Success:", data);
+      // Optionally, you can perform additional actions after successful submission
     })
     .catch((error) => {
       console.error("Error:", error);
+      // Handle any errors that occurred during form submission
     });
 });
