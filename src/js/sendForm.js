@@ -4,7 +4,7 @@ const apiURL = "https://formsubmit.co/6202ba928bfcdcc058f6a9546fc9f6da";
 contactForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const formData = new FormData(contactForm);
-  console.log(formData);
+
   fetch(apiURL, {
     method: "POST",
     headers: {
@@ -14,7 +14,11 @@ contactForm.addEventListener("submit", function (e) {
   })
     .then((response) => {
       if (response.ok) {
-        return response.json();
+        if (response.headers.get("content-type").includes("application/json")) {
+          return response.json();
+        } else {
+          return response.text();
+        }
       } else {
         throw new Error("Form submission failed");
       }
