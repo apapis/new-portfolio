@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Meet Adam Papis, a passionate junior full-stack web developer with expertise in JavaScript, SCSS, React, and more. Discover his journey from Aberystwyth University to professional success, view his portfolio, and explore how his global travels inspire his innovative web solutions."
+    />
     <title>Adam Papis - Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +22,7 @@
   <body>
     <header>
       <nav class="nav">
-        <button class="nav__button__open">
+        <button class="nav__button__open" aria-label="Open navigation">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -37,7 +41,7 @@
           </svg>
         </button>
         <div class="nav__box">
-          <button class="nav__button__close">
+          <button class="nav__button__close" aria-label="Close navigation">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -122,7 +126,10 @@
               </button>
             </a>
             <a href="#portfolio"
-              ><button class="section--introduction__buttons__button">
+              ><button
+                class="section--introduction__buttons__button"
+                aria-label="See portfolio"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -216,8 +223,8 @@
               <div class="card">
                 <img src="/src/img/page1.png" alt="" />
                 <div class="buttons">
-                  <button class="seeWebsite">
-                    <a href="#" target="_blank">
+                  <button class="seeWebsite" aria-label="See website">
+                    <a href="#" target="_blank" aria-label="See website">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -237,8 +244,8 @@
                       </svg>
                     </a>
                   </button>
-                  <button class="github">
-                    <a href="#" target="_blank">
+                  <button class="github" aria-label="See github">
+                    <a href="#" target="_blank" aria-label="See github">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -262,8 +269,8 @@
               <div class="card">
                 <img src="/src/img/page2.png" alt="" />
                 <div class="buttons">
-                  <button class="seeWebsite">
-                    <a href="#" target="_blank">
+                  <button class="seeWebsite" aria-label="See website">
+                    <a href="#" target="_blank" aria-label="See website">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -283,8 +290,12 @@
                       </svg>
                     </a>
                   </button>
-                  <button class="github">
-                    <a href="https://github.com/apapis/Car-App" target="_blank">
+                  <button class="github" aria-label="See github">
+                    <a
+                      href="https://github.com/apapis/Car-App"
+                      target="_blank"
+                      aria-label="See github"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -308,8 +319,8 @@
               <div class="card">
                 <img src="/src/img/page3.png" alt="" />
                 <div class="buttons">
-                  <button class="seeWebsite">
-                    <a href="#" target="_blank">
+                  <button class="seeWebsite" aria-label="See website">
+                    <a href="#" target="_blank" aria-label="See website">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -329,10 +340,11 @@
                       </svg>
                     </a>
                   </button>
-                  <button class="github">
+                  <button class="github" aria-label="See github">
                     <a
                       href="https://github.com/apapis/new-portfolio"
                       target="_blank"
+                      aria-label="See github"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -357,10 +369,11 @@
               <div class="card">
                 <img src="/src/img/page4.png" alt="" />
                 <div class="buttons">
-                  <button class="seeWebsite">
+                  <button class="seeWebsite" aria-label="See website">
                     <a
                       href="https://www.codewars.com/users/apapis"
                       target="_blank"
+                      aria-label="See website"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -392,19 +405,28 @@
           <h2>Contact</h2>
 
           <form id="contact__form" class="contact__form">
-            <label class="contact__form__title" required>email</label>
+            <label class="contact__form__title" for="email" required
+              >email</label
+            >
             <input
               class="contact__form__input"
               type="email"
               name="email"
+              id="email"
               required
             />
-            <label class="contact__form__title">name</label>
-            <input class="contact__form__input" type="text" name="name" />
-            <label class="contact__form__title">message</label>
+            <label class="contact__form__title" for="name">name</label>
+            <input
+              class="contact__form__input"
+              type="text"
+              name="name"
+              id="name"
+            />
+            <label class="contact__form__title" for="message">message</label>
             <textarea
               class="contact__form__input contact__form__input--textarea"
               name="message"
+              id="message"
               required
             ></textarea>
             <div
