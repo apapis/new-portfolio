@@ -1,6 +1,9 @@
 .section--aboutMe {
   .background {
     background-image: url("./img/background/aboutMe.svg");
+    padding-bottom: 52rem;
+    padding-top: 25rem;
+    margin-bottom: -25rem;
   }
 
   h2 {
@@ -8,5 +11,17 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+  }
+
+  p {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: $laptop) {
+    .background {
+      margin-bottom: -15rem;
+      padding-bottom: 35rem;
+    }
   }
 }

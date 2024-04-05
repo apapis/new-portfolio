@@ -1,0 +1,76 @@
+footer {
+  position: relative;
+  width: 100%;
+  height: 20rem;
+
+  overflow: hidden;
+
+  p {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3.5rem;
+    font-size: 2rem;
+    background-color: $brand-color-two;
+    text-align: center;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 3.5rem;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+    background-image: url("./img/background/wave.png");
+    background-size: 100rem 10rem;
+  }
+
+  .wave1 {
+    animation: wave 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+  }
+
+  .wave2 {
+    animation: wave2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 4.5rem;
+  }
+
+  .wave3 {
+    animation: wave 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 5rem;
+  }
+
+  .wave4 {
+    animation: wave2 15s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 5.5rem;
+  }
+}
+
+@keyframes wave {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 100rem;
+  }
+}
+
+@keyframes wave2 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -100rem;
+  }
+}
