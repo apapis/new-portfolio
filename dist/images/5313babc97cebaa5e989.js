@@ -1,0 +1,1 @@
+import"./style.scss";import"./js/nav";import"./js/scrollspy";document.addEventListener("DOMContentLoaded",(function(){import("./js/nav").then((function(n){n.initNav()})),import("./js/scrollspy").then((function(n){n.initScrollspy()})),import("./js/sendForm").then((function(n){n.initForm()}))}));
