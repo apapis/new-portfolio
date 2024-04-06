@@ -1,17 +1,20 @@
 import "./style.scss";
-import "./js/nav";
-import "./js/scrollspy";
 
 document.addEventListener("DOMContentLoaded", () => {
-  import("./js/nav").then((module) => {
+  import("./js/nav", { defer: true }).then((module) => {
     module.initNav();
   });
 
-  import("./js/scrollspy").then((module) => {
+  import("./js/scrollspy", { defer: true }).then((module) => {
     module.initScrollspy();
   });
 
-  import("./js/sendForm").then((module) => {
+  document.getElementById("loader").style.display = "none";
+});
+
+window.addEventListener("load", () => {
+  import("./js/sendForm", { defer: true }).then((module) => {
     module.initForm();
+    module.loadRecaptcha();
   });
 });

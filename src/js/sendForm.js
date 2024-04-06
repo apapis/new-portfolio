@@ -1,10 +1,20 @@
-import { loadRecaptcha } from "./recaptcha";
+let recaptchaLoaded = false;
+
+export function loadRecaptcha() {
+  if (recaptchaLoaded) return;
+
+  const script = document.createElement("script");
+  script.src = "https://www.google.com/recaptcha/api.js";
+  script.async = true;
+  script.defer = true;
+  document.body.appendChild(script);
+
+  recaptchaLoaded = true;
+}
 
 export function initForm() {
   const contactForm = document.querySelector("#contact__form");
   if (!contactForm) return;
-
-  loadRecaptcha();
 
   const apiURL = "https://api.emailjs.com/api/v1.0/email/send";
   const successMessage = document.querySelector("#success-message");
