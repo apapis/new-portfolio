@@ -15,6 +15,13 @@ module.exports = {
       template: "./src/index.html",
       filename: "index.html",
       inject: "body",
+      meta: {
+        "Content-Security-Policy": {
+          "http-equiv": "Content-Security-Policy",
+          content:
+            "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https://www.gstatic.com/recaptcha/; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google.com/recaptcha/ https://api.emailjs.com; frame-src 'self' https://www.google.com chrome-extension:",
+        },
+      },
     }),
   ],
   module: {
